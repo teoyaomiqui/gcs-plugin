@@ -1,0 +1,62 @@
+attributes:
+  backup_driver:
+    value: 'cinder.backup.drivers.google'
+    label: 'Backup driver for google'
+    description: 'Enter driver for google backup, or leave the default value'
+    weight: 10
+    type: "text"
+  backup_gcs_bucket:
+    value: ''
+    label: 'GCS bucket name'
+    description: ''
+    weight: 15
+    type: "text"
+  backup_gcs_project_id:
+    value: ''
+    label: 'GCS project ID'
+    description: 'Enter the project ID required for creating a GCS bucket.'
+    weight: 20
+    type: "text"
+  fuel_plugin_name_radio:
+    type: "radio"
+    weight: 40
+    value: "disabled"
+    label: "Radio buttons label"
+    values:
+      - data: "data1"
+        label: "Label data1"
+        description: "Description data1"
+      - data: "data2"
+        label: "Label data2"
+        description: "Description data2"
+      - data: "data3"
+        label: "Label data3"
+        description: "Description data3"
+  gcs_bucket_location:
+    type: "select"
+    weight: 50
+    value: "value1"
+    label: "GCS buckel location"
+    description: "choose location of the GCS bucker, or choose other and enter location manualy"
+    values:
+      - data: "US"
+        label: "US"
+      - data: "EU"
+        label: "EU"
+      - data: "other"
+        label: "other"  
+  backup_gcs_enable_progress_timer:
+    type: "checkbox"
+    weight: 70
+    value: "true"
+    label: "GCS progress timer"
+    description: "Enable or Disable the timer to send the periodic progress notifications to Ceilometer when backing up the volume to the GCS backend storage."
+  gcs_other_bucket_location:
+    value: ''
+    label: 'Other bucket location'
+    description: 'Enter bucked location manualy if your location is not in the list'
+    weight: 60 
+    type: "text"
+    restrictions:
+      - condition: "not (settings:gcs.gcs_bucket_location.value == 'other')"
+        action: "hide" 
