@@ -1,9 +1,9 @@
 attributes:
-  backup_driver:
-    value: 'cinder.backup.drivers.google'
-    label: 'Backup driver for google'
-    description: 'Enter driver for google backup, or leave the default value'
-    weight: 10
+  backup_gcs_credentials_file:
+    value: ''
+    label: 'Path to GCS credentials file'
+    description: 'Enter absolute path to GCS service account key'
+    weight: 20
     type: "text"
   backup_gcs_bucket:
     value: ''
@@ -14,24 +14,39 @@ attributes:
   backup_gcs_project_id:
     value: ''
     label: 'GCS project ID'
-    description: 'Enter the project ID required for creating a GCS bucket.'
-    weight: 20
+    description: ''
+    weight: 10
     type: "text"
-  fuel_plugin_name_radio:
-    type: "radio"
+#  fuel_plugin_name_radio:
+#    type: "radio"
+#    weight: 40
+#    value: "disabled"
+#    label: "Radio buttons label"
+#    values:
+#      - data: "data1"
+#        label: "Label data1"
+#        description: "Description data1"
+#      - data: "data2"
+#        label: "Label data2"
+#        description: "Description data2"
+#      - data: "data3"
+#        label: "Label data3"
+#        description: "Description data3"
+  backup_gcs_storage_class:
+    value: 'NEARLINE'
+    label: 'GCS storage class'
     weight: 40
-    value: "disabled"
-    label: "Radio buttons label"
-    values:
-      - data: "data1"
-        label: "Label data1"
-        description: "Description data1"
-      - data: "data2"
-        label: "Label data2"
-        description: "Description data2"
-      - data: "data3"
-        label: "Label data3"
-        description: "Description data3"
+    type: 'text'
+    description: 'Enter or leave default class of GCS bucket'
+    regex: 
+      source: '^[A-Z0-9]+$'
+      error: 'must be uppercase characters and/or digits'
+  backup_gcs_user_agent:
+    value: 'gcscinder'
+    label: 'GCS user agent '
+    weight: 45
+    type: "text"
+    description: 'Enter HTTP user-agent string for GCS api'
   gcs_bucket_location:
     type: "select"
     weight: 50
