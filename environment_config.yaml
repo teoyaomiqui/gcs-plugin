@@ -48,30 +48,36 @@ attributes:
     type: "text"
     description: 'Enter HTTP user-agent string for GCS api'
   gcs_bucket_location:
-    type: "select"
+    type: "text"
     weight: 50
-    value: "value1"
+    value: "US"
     label: "GCS buckel location"
     description: "choose location of the GCS bucker, or choose other and enter location manualy"
-    values:
-      - data: "US"
-        label: "US"
-      - data: "EU"
-        label: "EU"
-      - data: "other"
-        label: "other"  
+#  gcs_bucket_location:
+#    type: "select"
+#    weight: 50
+#    value: "US"
+#    label: "GCS buckel location"
+#    description: "choose location of the GCS bucker, or choose other and enter location manualy"
+#    values:
+#      - data: "US"
+#        label: "US"
+#      - data: "EU"
+#        label: "EU"
+#      - data: "other"
+#        label: "other"  
   backup_gcs_enable_progress_timer:
     type: "checkbox"
     weight: 70
     value: "true"
     label: "GCS progress timer"
     description: "Enable or Disable the timer to send the periodic progress notifications to Ceilometer when backing up the volume to the GCS backend storage."
-  gcs_other_bucket_location:
-    value: ''
-    label: 'Other bucket location'
-    description: 'Enter bucked location manualy if your location is not in the list'
-    weight: 60 
-    type: "text"
-    restrictions:
-      - condition: "not (settings:gcs.gcs_bucket_location.value == 'other')"
-        action: "hide" 
+#  gcs_other_bucket_location:
+#    value: ''
+#    label: 'Other bucket location'
+#    description: 'Enter bucked location manualy if your location is not in the list'
+#    weight: 60 
+#    type: "text"
+#    restrictions:
+#      - condition: "not (settings:gcs.gcs_bucket_location.value == 'other')"
+##        action: "hide" 
