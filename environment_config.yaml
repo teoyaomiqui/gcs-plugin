@@ -47,7 +47,7 @@ attributes:
     weight: 45
     type: "text"
     description: 'Enter HTTP user-agent string for GCS api'
-  gcs_bucket_location:
+  backup_gcs_bucket_location:
     type: "text"
     weight: 50
     value: "US"

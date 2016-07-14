@@ -3,7 +3,7 @@
 
 - id: gcs_copy_keys
   type: copy_files
-  role: '*'
+  role: 'cinder'
   required_for: [pre_deployment_end]
   requires: [generate_keys]
   parameters:
