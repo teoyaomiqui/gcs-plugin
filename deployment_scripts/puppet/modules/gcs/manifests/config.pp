@@ -17,7 +17,7 @@ $gcs_config_values =   {  'backup_gcs_bucket'                   => $gcs::setting
      'DEFAULT/backup_gcs_credentials_file':      value   => $gcs_config_values['backup_gcs_credentials_file'];
      'DEFAULT/backup_gcs_bucket_location':       value   => $gcs_config_values['backup_gcs_bucket_location'];
      'DEFAULT/backup_gcs_enable_progress_timer': value   => $gcs_config_values['backup_gcs_enable_progress_timer'];
-     'DEFAULT/backup_gcs_stprage_class':         value   => $gcs_config_values['backup_gcs_stprage_class'];
+     'DEFAULT/backup_gcs_storage_class':         value   => $gcs_config_values['backup_gcs_storage_class'];
      'DEFAILT/backup_gcs_user_agent':            value   => $gcs_config_values['backup_gcs_user_agent'];
   }
 }
