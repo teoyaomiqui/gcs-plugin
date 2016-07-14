@@ -1,4 +1,4 @@
-class services {
+class gcs::services {
 $services = ['cinder-backup'] 
 service { $services: ensure => running }
 Cinder_config <||> ~> Service[$services]
