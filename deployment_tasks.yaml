@@ -4,8 +4,7 @@
 - id: gcs_copy_keys
   type: copy_files
   role: 'cinder'
-  required_for: [pre_deployment_end]
-  requires: [generate_keys]
+  requires: [gcs_cinder_conf]
   parameters:
     files:
       - src: /root/gcs_key
@@ -16,11 +15,12 @@
 - id: gcs_cinder_conf
   type: puppet
   role: 'cinder'
-  requires: [openstack-cinder]
+  requires: [top-role-cinder]
   parameters:
     puppet_manifest: gcs_cinder_conf.pp
     puppet_modules: puppet/modules:/etc/puppet/modules
     timeout: 300
+  
 
 #  requires: [deploy_start] # version 1.0.0
 #  required_for: [deploy_end]
