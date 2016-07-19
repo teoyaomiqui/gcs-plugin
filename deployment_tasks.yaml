@@ -17,7 +17,7 @@
   role: 'cinder'
   requires: [top-role-cinder]
   parameters:
-    puppet_manifest: gcs_cinder_conf.pp
+    puppet_manifest: cinder_conf.pp
     puppet_modules: puppet/modules:/etc/puppet/modules
     timeout: 300
 
@@ -26,7 +26,7 @@
   role: 'cinder'
   requires: [gcs_cinder_conf]
   parameters:
-    puppet_manifest: gcs_install_packages.pp
+    puppet_manifest: install_packages.pp
     puppet_modules: puppet/modules:/etc/puppet/modules
     timeout: 300
 

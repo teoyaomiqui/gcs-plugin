@@ -1,13 +1,12 @@
 class gcs::config (
-$gcs_backup_driver =      'cinder.backup.drivers.google',
-$gcs_config_values =   {  'backup_gcs_bucket'                   => $gcs::settings['backup_gcs_bucket'],
-                          'backup_gcs_project_id'               => $gcs::settings['backup_gcs_project_id'],
-                          'backup_gcs_credentials_file'         => $gcs::settings['backup_gcs_credentials_file'],
-                          'backup_gcs_bucket_location'          => $gcs::settings['backup_gcs_bucket_location'],
-                          'backup_gcs_enable_progress_timer'    => $gcs::settings['backup_gcs_enable_progress_timer'],
-                          'backup_gcs_storage_class'            => $gcs::settings['backup_gcs_storage_class'],
-                          'backup_gcs_user_agent'               => $gcs::settings['backup_gcs_user_agent'],
-                       }
+$backup_driver                       = $gcs::backup_driver,
+$backup_gcs_bucket                   = $gcs::settings['backup_gcs_bucket'],
+$backup_gcs_project_id               = $gcs::settings['backup_gcs_project_id'],
+$backup_gcs_credentials_file         = $gcs::settings['backup_gcs_credentials_file'],
+$backup_gcs_bucket_location          = $gcs::settings['backup_gcs_bucket_location'],
+$backup_gcs_enable_progress_timer    = $gcs::settings['backup_gcs_enable_progress_timer'],
+$backup_gcs_storage_class            = $gcs::settings['backup_gcs_storage_class'],
+$backup_gcs_user_agent               = $gcs::settings['backup_gcs_user_agent'],
 ) {
 
   cinder_config {
