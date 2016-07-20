@@ -1,4 +1,5 @@
 class gcs::services {
-service { $gcs::services: ensure => running }
-Cinder_config <||> ~> Service[$gsc::services]
+  $services = $gcs::services
+  service { $services: ensure => running }
+  Cinder_config <||> ~> Service[$services]
 }
