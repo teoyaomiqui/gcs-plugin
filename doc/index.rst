@@ -6,14 +6,13 @@
 Mistral Fuel Plugin's User Guide
 ===============================================
 
-Overview:
+Overview
 ~~~~~~~~~
 
 .. toctree::
    :maxdepth: 2
 
    intro
-   definitions
    requirements
    limitations
    release_notes
